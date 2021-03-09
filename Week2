@@ -1,0 +1,34 @@
+package com.company;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        Scanner baca = new Scanner(System.in);
+        Random rand = new Random();
+
+        System.out.print("Masukan angka pertama[0-9]: ");
+        int input_user1 = baca.nextInt();
+        System.out.print("Masukan angka kedua[0-9]: ");
+        int input_user2 = baca.nextInt();
+
+        int rand_int1 = rand.nextInt(10);
+        int rand_int2 = rand.nextInt(10);
+
+        System.out.println("\nAngka anda adalah: " + input_user1 + input_user2);
+        System.out.println("Undian lotre hari ini adalah: "+rand_int1 + rand_int2 + "\n");
+
+        if(input_user1 == rand_int1 && input_user2 == rand_int2){
+            System.out.println("Selamat anda mendapatkan $10.000");
+        }else if(input_user1 == rand_int2 && input_user2 == rand_int1){
+            System.out.println("Selamat anda mendapatkan $3.000");
+        }else if(input_user1 == rand_int1 || input_user2 == rand_int2 ||input_user1 == rand_int2 || input_user2 == rand_int1){
+            System.out.println("Selamat anda mendapatkan $1.000");
+        }else{
+            System.out.println("Maaf anda Kurang beruntung");
+        }
+    }
+}
